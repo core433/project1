@@ -1,6 +1,7 @@
 Project1::Application.routes.draw do
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   #get "main_pages/home"
   #get "main_pages/help"
@@ -8,6 +9,10 @@ Project1::Application.routes.draw do
   root to: 'main_pages#home'
 
   match '/signup', to: "users#new"
+
+  match '/signin', to: "sessions#new"
+
+  match '/signout', to: "sessions#destroy", via: :delete
 
   match '/help', to: "main_pages#help"
 
