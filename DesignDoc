@@ -1,0 +1,12 @@
+a project is an item for which people log daily time
+
+Users can be part of a project, as either a regular user or project admin
+	admins are the only ones who can set project rules, like min hours a day, timeoff types, etc
+
+A project is related to its users through relationships.
+
+A project can have many users, and a user can be part of many projects.
+
+A project has many time entries, each associated with one user.
+
+Project admins should be able to see all time entries.
