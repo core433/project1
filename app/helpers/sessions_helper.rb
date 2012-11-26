@@ -42,4 +42,12 @@ module SessionsHelper
 		session[:return_to] = request.url
 	end
 
+	def store_project_id(the_id)
+		session[:project_id] = the_id
+	end
+
+	def get_stored_project_id
+		session[:project_id]
+	end
+
 end

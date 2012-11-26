@@ -6,7 +6,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
-  	@project = Project.find(params[:id])
+    if signed_in?
+      @project = Project.find(params[:id])
+      store_project_id(@project.id)
+      @time_entry = @project.time_entries.build
+    end
   end
 
   def create

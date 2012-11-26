@@ -4,6 +4,7 @@ Project1::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :projects
   resources :rel_projects, only: [:create, :destroy]
+  resources :time_entries, only: [:create, :destroy]
 
   #get "main_pages/home"
   #get "main_pages/help"

@@ -224,6 +224,28 @@ input {
   @extend .error;
  }
 
+.time_entry {
+  padding: 10px;
+  background-color: #ddd;
+
+  h1 {
+    font-size: 1.8em;
+    float: left;
+    margin-left: 20px;
+  }
+}
+
+.past_entry_yellow {
+  padding: 10px 20px 10px;
+  background-color: #eed;
+}
+
+.past_entry_white {
+  padding: 10px 20px 10px;
+  background-color: #fff;
+}
+
+
 /* users index */
 
 .users {

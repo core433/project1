@@ -15,7 +15,11 @@
 		<h1><%= @project.title %></h1>
 		<br>
 		<% if @project.has_user?(current_user) %>
-			<%= render 'timelog_form' if signed_in? %>
+			<% if signed_in? %>
+				<%= render 'timelog_form' %>
+				<br/>
+				<%= render 'project_time_entries' %>
+			<% end %>
 		<% else %>
 			<h2>You are not currently enrolled in this project.</h2>
 		<% end %>

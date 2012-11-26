@@ -1,0 +1,22 @@
+<% count = 0 %>
+<% unless @project.time_entries.count == 0 %>
+	<% @project.time_entries.each do |entry| %>
+		<% unless entry.description.nil? %>
+			<% if count%2==0 %>
+				<div class="past_entry_yellow">
+			<% else %>
+				<div class="past_entry_white">
+			<% end %>
+			<% count+=1 %>
+					<div>
+						<span class="timestamp">
+							<%= entry.created_at %>
+						</span>
+					</div>
+					<div>
+						<%= entry.description %>
+					</div>
+				</div>
+		<% end %>
+	<% end %>
+<% end %>

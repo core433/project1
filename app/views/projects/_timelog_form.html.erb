@@ -1,18 +1,25 @@
 
-<div class="row">
-	<h3>New Time Entry</h3>
-    <%= form_for(@project) do |f| %>
-    	<%= render 'shared/error_messages', object: f.object %>
+<div class="time_entry">
+	<div class="row">
+		<h1>New Time Entry</h1>
+	</div>
+	<div class="row">
+    	<%= form_for(@time_entry) do |f| %>
+    		<%= render 'shared/error_messages', object: f.object %>
 
-    	<div class="span1">
-      		<%= f.label :title %>
-      	</div>
-      	<div class="span4">
-      		<%= f.text_field :title %>
-      	</div>
-      	<div class="span1">
-      		<%= f.submit "Save", class: "btn btn-large btn-primary" %>
-      	</div>
-    <% end %>
+      		<div class="span6">
+      			<%= f.text_field :description, placeholder: "Description of what you did..." %>
+      		</div>
+      		<div class="span0">
+      			<%= f.label :time %>
+      		</div>
+      		<div class="span2">
+      			<%= f.text_field :time, placeholder: "in Minutes..." %>
+      		</div>
+      		<div class="span1">
+      			<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+      		</div>
+    	<% end %>
+	</div>
 
 </div>
