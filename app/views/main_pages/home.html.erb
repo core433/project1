@@ -1,15 +1,13 @@
 <% if signed_in? %>
 	<div class="row">
-		<aside class="span4">
+		<aside class="span2">
 			<section>
 				<%= render 'shared/user_info' %>
 			</section>
 		</aside>
-		<div class="span8">
+		<div class="span10">
 			<h1>Your Projects</h1>
-			<center>
 			<%= render 'shared/user_projects' %>
-			</center>
 		</div>
 	</div>
 <% else %>

@@ -1,0 +1,5 @@
+<% if @project.has_user?(current_user) %>
+	<%= render 'leave' %>
+<% else %>
+	<%= render 'join' %>
+<% end %>

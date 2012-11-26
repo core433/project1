@@ -116,6 +116,21 @@ footer {
   @include box_sizing;
 }
 
+.project_box {
+  float: left;
+  width: 100%;
+  margin: 10px 20px;
+  @include box_sizing;
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  padding: 10px 20px 10px;
+}
+
+.join_button {
+  float:center;
+  margin-top:20px;
+}
+
 /* sidebar */
 
 aside {

@@ -1,0 +1,18 @@
+
+<div class="row">
+	<h3>New Time Entry</h3>
+    <%= form_for(@project) do |f| %>
+    	<%= render 'shared/error_messages', object: f.object %>
+
+    	<div class="span1">
+      		<%= f.label :title %>
+      	</div>
+      	<div class="span4">
+      		<%= f.text_field :title %>
+      	</div>
+      	<div class="span1">
+      		<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+      	</div>
+    <% end %>
+
+</div>

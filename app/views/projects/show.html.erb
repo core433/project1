@@ -1,4 +1,23 @@
 <% provide(:title, @project.title) %>
 
-<h1><%= @project.title %></h1>
-<%= pluralize(@project.users.count, 'member') %>
+<div class="row">
+	<aside class="span2">
+		<section>
+
+			<h2>Project Details</h2>
+			<%= pluralize(@project.users.count, 'member') %>
+			<div class="join_button">
+				<%= render 'join_button' if signed_in? %>
+			</div>
+		</section>
+	</aside>
+	<div class="span10">
+		<h1><%= @project.title %></h1>
+		<br>
+		<% if @project.has_user?(current_user) %>
+			<%= render 'timelog_form' if signed_in? %>
+		<% else %>
+			<h2>You are not currently enrolled in this project.</h2>
+		<% end %>
+	</div>
+</div>
