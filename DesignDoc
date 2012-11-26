@@ -10,3 +10,17 @@ A project can have many users, and a user can be part of many projects.
 A project has many time entries, each associated with one user.
 
 Project admins should be able to see all time entries.
+
+
+Project
+
+	has a title
+
+	has many user relationships
+		a user can be related to many projects
+		a project can have many users
+
+	has many time entries
+		all time entries belong to a project
+		but are associated with a user id
+		has date, and hours logged on that date

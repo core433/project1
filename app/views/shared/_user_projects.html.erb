@@ -1,0 +1,4 @@
+<% current_user.rel_projects.each do |rel| %>
+	<% @project = Project.find_by_id(rel.project_id) %>
+	<h3><%= link_to @project.title, @project %></h3>
+<% end %>

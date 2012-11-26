@@ -2,6 +2,7 @@ Project1::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :projects
 
   #get "main_pages/home"
   #get "main_pages/help"
@@ -17,7 +18,6 @@ Project1::Application.routes.draw do
   match '/help', to: "main_pages#help"
 
   match '/about', to: "main_pages#about"
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

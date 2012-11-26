@@ -15,6 +15,11 @@ describe User do
 	it { should respond_to(:remember_token) }
 	it { should respond_to(:superadmin) }
 	it { should respond_to(:authenticate) }
+	it { should respond_to(:rel_projects) }
+	it { should respond_to(:projects) }
+	it { should respond_to(:has_project?) }
+	it { should respond_to(:add_project!) }
+	it { should respond_to(:remove_project!) }
 
 	it { should be_valid }
 	it { should_not be_superadmin }
@@ -114,4 +119,29 @@ describe User do
 		its(:remember_token) { should_not be_blank }
 	end
 
+	describe "has project" do
+		let (:project) { FactoryGirl.create(:project) }
+		before do
+			@user.save
+			@user.add_project!(project)
+		end
+
+		it { should be_has_project(project) }
+		its(:projects) { should include(project) }
+
+		describe "and remove project" do
+			before { @user.remove_project!(project) }
+
+			it { should_not be_has_project(project) }
+			its(:projects) { should_not include(project) }
+		end
+	end
+
 end
+
+
+
+
+
+
+

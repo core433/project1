@@ -8,6 +8,22 @@
           <li><%= link_to "Help",    help_path %></li>
           <% if signed_in? %>
             <li><%= link_to "Users", '#' %></li>
+
+            <!-- Projects Menu -->
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Projects <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "  + Create New!", "/projects/new" %></li>
+                <% current_user.rel_projects.each do |rel| %>
+                  <% @project = Project.find_by_id(rel.project_id) %>
+                  <li><%= link_to @project.title, @project %></li>
+                <% end %>
+              </ul>
+            </li>
+
+            <!-- Account Menu -->
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
