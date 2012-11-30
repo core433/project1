@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126072812) do
+ActiveRecord::Schema.define(:version => 20121129080720) do
+
+  create_table "datasets", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.text     "rows"
+    t.integer  "num_rows"
+    t.integer  "row_length"
+    t.integer  "project_id"
+  end
+
+  add_index "datasets", ["name"], :name => "index_datasets_on_name"
 
   create_table "projects", :force => true do |t|
     t.string   "title"
@@ -30,17 +42,6 @@ ActiveRecord::Schema.define(:version => 20121126072812) do
   add_index "rel_projects", ["user_id", "project_id"], :name => "index_rel_projects_on_user_id_and_project_id", :unique => true
   add_index "rel_projects", ["user_id"], :name => "index_rel_projects_on_user_id"
 
-  create_table "time_entries", :force => true do |t|
-    t.string   "description"
-    t.integer  "time"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "user_id"
-    t.integer  "project_id"
-  end
-
-  add_index "time_entries", ["user_id"], :name => "index_time_entries_on_user_id"
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -53,5 +54,16 @@ ActiveRecord::Schema.define(:version => 20121126072812) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+  create_table "vizs", :force => true do |t|
+    t.string   "description"
+    t.integer  "time"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
+    t.integer  "project_id"
+  end
+
+  add_index "vizs", ["user_id"], :name => "index_time_entries_on_user_id"
 
 end

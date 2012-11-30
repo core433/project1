@@ -6,7 +6,8 @@ class Project < ActiveRecord::Base
                                     dependent: :destroy
 
   has_many :users, through: :reverse_rel_projects, source: :user
-  has_many :time_entries, dependent: :destroy
+  has_many :vizs, dependent: :destroy
+  has_many :datasets, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 50 }
 

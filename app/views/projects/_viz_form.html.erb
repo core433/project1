@@ -1,0 +1,32 @@
+<div class="viz_form">
+    <section>
+        <div class="span3">
+    		  <h1>Step 1: Upload your Data</h1>
+        </div>
+        <div class="span4 pagination-right">
+            <%= form_for(@viz) do |f| %>
+                <%= f.submit "Upload Dataset", class: "btn btn-large btn" %>
+            <% end %>
+        </div>
+        <div class="span2">
+            <%= form_for(@viz) do |f| %>
+                <%= f.submit "Use Spreadsheet", class: "btn btn-large btn-primary" %>
+            <% end %>
+        </div>
+
+    </section>
+    <section>
+
+        <%= form_for(@viz) do |f| %>
+        	<%= render 'shared/error_messages', object: f.object %>
+
+            <%= render 'spreadsheet_form' %>
+
+    </section>
+
+    <section class="center">
+            <%= f.submit "Save Dataset", class: "btn btn-large btn-primary" %>
+            <% end %>
+    </section>
+
+</div>

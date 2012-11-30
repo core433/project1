@@ -1,0 +1,23 @@
+<% unless @project.datasets.count == 0 %>
+	<% @project.datasets.each do |dataset| %>
+		<% unless dataset.rows.nil? %>
+			<div class="row">
+					<div class="span10">
+						<h3><%= dataset.name %></h3>
+						<span class="timestamp">
+							<%= dataset.created_at %>
+						</span>
+					</div>
+					<div class="span10">
+						<%= dataset.rows[:a1] %>
+						<%= dataset.rows[:a2] %>
+						<%= dataset.rows[:a3] %>
+						<%= dataset.rows[:a4] %>
+						<%= dataset.rows.count %>
+						<%= dataset.row_length %>
+						<%= dataset.num_rows %>
+					</div>
+				</div>
+		<% end %>
+	<% end %>
+<% end %>

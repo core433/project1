@@ -1,0 +1,2 @@
+module VizsHelper
+end

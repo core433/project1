@@ -2,9 +2,14 @@ Project1::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :projects
+  resources :projects do
+    member do
+      get :edit_data, :edit_viz, :edit_share
+    end
+  end
   resources :rel_projects, only: [:create, :destroy]
-  resources :time_entries, only: [:create, :destroy]
+  resources :vizs, only: [:create, :destroy]
+  resources :datasets, only: [:create, :destroy]
 
   #get "main_pages/home"
   #get "main_pages/help"

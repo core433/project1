@@ -1,0 +1,7 @@
+<%= @project.datasets.count %> datasets
+<br/><br/>
+<% @project.datasets.each do |dataset| %>
+	<div>
+	<%= dataset.name %>
+	</div>
+<% end %>

@@ -1,0 +1,114 @@
+<%= form_for(@dataset) do |f| %>
+    <section>
+        <div class="span6">
+            <%= f.text_field :name, placeholder: "Give your Dataset a name" %>
+        </div>
+    </section>
+    <section>
+        <div class="span9">
+            <div class="spread_cell">
+                <%= f.text_field :a1, placeholder: "A1" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :a2, placeholder: "A2" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :a3, placeholder: "A3" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :a4, placeholder: "A4" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :a5, placeholder: "A5" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :a6, placeholder: "A6" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :a7, placeholder: "A7" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :a8, placeholder: "A8" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :a9, placeholder: "A9" %>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="span9">
+            <div class="spread_cell">
+                <%= f.text_field :b1, placeholder: "B1" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :b2, placeholder: "B2" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :b3, placeholder: "B3" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :b4, placeholder: "B4" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :b5, placeholder: "B5" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :b6, placeholder: "B6" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :b7, placeholder: "B7" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :b8, placeholder: "B8" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :b9, placeholder: "B9" %>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="span9">
+            <div class="spread_cell">
+                <%= f.text_field :c1, placeholder: "C1" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :c2, placeholder: "C2" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :c3, placeholder: "C3" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :c4, placeholder: "C4" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :c5, placeholder: "C5" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :c6, placeholder: "C6" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :c7, placeholder: "C7" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :c8, placeholder: "C8" %>
+            </div>
+            <div class="spread_cell">
+                <%= f.text_field :c9, placeholder: "C9" %>
+            </div>
+        </div>
+    </section>
+    <section class="center">
+            <!-- for the currently hard-coded spreadsheet, we
+                hard-code the row_length and num_rows. 
+                This would obviously have to change for 
+                dynamic datasets or datasets from uploaded
+                files.  -->
+            <%= f.hidden_field :row_length, value:9 %>
+            <%= f.hidden_field :num_rows, value:3 %>
+            <%= f.submit "Save Dataset", class: "btn btn-large btn-primary" %>
+    </section>
+<% end %>
+
+
+
+

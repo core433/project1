@@ -34,6 +34,7 @@ textarea {
 	margin-bottom: 10px;
 }
 
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -131,6 +132,13 @@ footer {
   margin-top:20px;
 }
 
+.project_nav {
+  margin: -20px 0px 100px;
+  background-color: #ddd;
+  width: 100%;
+}
+
+
 /* sidebar */
 
 aside {
@@ -224,15 +232,24 @@ input {
   @extend .error;
  }
 
-.time_entry {
-  padding: 10px;
+.viz_form {
+  padding: 20px 0px 10px;
   background-color: #ddd;
+
 
   h1 {
     font-size: 1.8em;
     float: left;
-    margin-left: 20px;
+    margin-left: 10px;
   }
+}
+
+/* data entry */
+.spread_cell {
+  float: left;
+  margin: 2px;
+  padding: 0px;
+  width: 10.5%;
 }
 
 .past_entry_yellow {

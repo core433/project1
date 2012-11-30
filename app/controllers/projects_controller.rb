@@ -9,7 +9,8 @@ class ProjectsController < ApplicationController
     if signed_in?
       @project = Project.find(params[:id])
       store_project_id(@project.id)
-      @time_entry = @project.time_entries.build
+      @viz = @project.vizs.build
+      @dataset = @project.datasets.build
     end
   end
 
@@ -36,6 +37,36 @@ class ProjectsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def edit_data
+    @title = "Upload Data"
+    store_edit_state(0)
+    @project = Project.find(params[:id])
+    store_project_id(@project.id)
+    @viz = @project.vizs.build
+    @dataset = @project.datasets.build
+    render 'show_edit_data'
+  end
+
+  def edit_viz
+    @title = "Create your Viz"
+    store_edit_state(1)
+    @project = Project.find(params[:id])
+    store_project_id(@project.id)
+    @viz = @project.vizs.build
+    @dataset = @project.datasets.build
+    render 'show_edit_viz'
+  end
+
+  def edit_share
+    @title = "Share your Viz"
+    store_edit_state(2)
+    @project = Project.find(params[:id])
+    store_project_id(@project.id)
+    @viz = @project.vizs.build
+    @dataset = @project.datasets.build
+    render 'show_edit_share'
   end
 
 end

@@ -1,0 +1,46 @@
+<h1><%= @project.title %></h1>
+<% if @project.has_user?(current_user) %>	
+	<% if signed_in? %>
+	
+	<div class="row center" style="background-color: #f0f0f0; margin-top:-20px; margin-bottom: 40px;">
+
+	<% if get_edit_state == 0 %>
+		<div class="span3" style="background-color: #000">
+			<h3 style="color: #ccc">Upload Data</h3>
+		</div>
+		<div class="span4">
+			<h3><%= link_to "Create Viz",    edit_viz_project_path(@project) %></h3>
+		</div>
+		<div class="span3">
+			<h3><%= link_to "Share!",    edit_share_project_path %></h3>
+		</div>
+
+	<% elsif get_edit_state == 1 %>
+	
+		<div class="span3">
+			<h3><%= link_to "Upload Data",    edit_data_project_path %></h3>
+		</div>
+		<div class="span4" style="background-color: #000">
+			<h3 style="color: #ccc">Create Viz</h3>
+		</div>
+		<div class="span3">
+			<h3><%= link_to "Share!",    edit_share_project_path %></h3>
+		</div>
+
+	<% else %>
+
+		<div class="span3">
+			<h3><%= link_to "Upload Data",    edit_data_project_path %></h3>
+		</div>
+		<div class="span4">
+			<h3><%= link_to "Create Viz",    edit_viz_project_path %></h3>
+		</div>
+		<div class="span3" style="background-color: #000">
+			<h3 style="color: #ccc">Share!</h3>
+		</div>
+
+	<% end %>
+	</div>
+
+	<% end %>
+<% end %>

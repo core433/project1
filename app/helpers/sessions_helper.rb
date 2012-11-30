@@ -42,12 +42,26 @@ module SessionsHelper
 		session[:return_to] = request.url
 	end
 
+	# For storing the project id so we can pass the
+	# proper project to controllers of models that
+	# rely on the project, like Datasets
 	def store_project_id(the_id)
 		session[:project_id] = the_id
 	end
 
 	def get_stored_project_id
 		session[:project_id]
+	end
+
+	# For storing the "edit state" of a project - there
+	# are 3 states: upload data, make visualization, and
+	# get embedded link
+	def store_edit_state(the_state)
+		session[:edit_state] = the_state
+	end
+
+	def get_edit_state
+		session[:edit_state] || 0
 	end
 
 end

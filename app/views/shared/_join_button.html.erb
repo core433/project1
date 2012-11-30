@@ -1,5 +1,5 @@
 <% if @project.has_user?(current_user) %>
-	<%= render 'leave' %>
+	<%= render 'shared/leave' %>
 <% else %>
-	<%= render 'join' %>
+	<%= render 'shared/join' %>
 <% end %>

@@ -1,0 +1,22 @@
+<% count = 0 %>
+<% unless @project.vizs.count == 0 %>
+	<% @project.vizs.each do |viz| %>
+		<% unless viz.description.nil? %>
+			<% if count%2==0 %>
+				<div class="past_entry_yellow">
+			<% else %>
+				<div class="past_entry_white">
+			<% end %>
+			<% count+=1 %>
+					<div>
+						<span class="timestamp">
+							<%= viz.created_at %>
+						</span>
+					</div>
+					<div>
+						<%= viz.description %>
+					</div>
+				</div>
+		<% end %>
+	<% end %>
+<% end %>
