@@ -244,6 +244,18 @@ input {
   }
 }
 
+.viz_selection_box_off {
+  padding-top:20px;
+  padding-bottom:20px;
+  background-color: #fffadd;
+}
+
+.viz_selection_box_on {
+  padding-top:20px;
+  padding-bottom:20px;
+  background-color: #88caff;
+}
+
 /* data entry */
 .spread_cell {
   float: left;

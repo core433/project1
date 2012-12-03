@@ -1,0 +1,13 @@
+
+<ul class="nav">
+<li id="fat-menu" class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    Select a Dataset <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+      <% @project.datasets.each do |dataset| %>
+      <li><%= link_to dataset.name, '#' %></li>
+      <% end %>
+  </ul>
+</li>
+</ul>

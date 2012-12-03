@@ -26,20 +26,16 @@
 		<%= render 'shared/project_nav' %>
 		</section>
 
-
 		<% if @project.has_user?(current_user) %>
 			<% if signed_in? %>
-			<section>
-				<%= render 'shared/dataset_form' %>
-			</section>
 
-			<section>
-				<%= render 'shared/project_datasets' %>
-			</section>
+			<%= render 'viz_form' %>
+
 			<% end %>
 		<% else %>
 			<h2>You are not currently enrolled in this project.</h2>
 		<% end %>
+
 
 	</div>
 </div>

@@ -1,32 +1,57 @@
+<% content_for(:head) do %>
+<!--Load the google AJAX API -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!--Load jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<%= javascript_include_tag('draw_viz') %>
+<%= javascript_include_tag('select_viz_type') %>
+<% end %>
+
+<!-- get the dataset I want into json so I can load it into jQuery -->
+<script id="dataset_json" type="text/json">
+    <%= raw @project.datasets.first.to_json %>
+</script>
+
 <div class="viz_form">
-    <section>
-        <div class="span3">
-    		  <h1>Step 1: Upload your Data</h1>
-        </div>
-        <div class="span4 pagination-right">
-            <%= form_for(@viz) do |f| %>
-                <%= f.submit "Upload Dataset", class: "btn btn-large btn" %>
-            <% end %>
-        </div>
-        <div class="span2">
-            <%= form_for(@viz) do |f| %>
-                <%= f.submit "Use Spreadsheet", class: "btn btn-large btn-primary" %>
-            <% end %>
-        </div>
 
-    </section>
-    <section>
+    <div class="row">
+        <div class="span4">
+    		  <h1>Pick a visualization</h1>
+        </div>
+        <div class="span6 pagination-right" style="margin-top:16px;">
+            <div class="span2">
+                for dataset: 
+            </div>
+            <div class="span2">
+            <%= render 'dataset_dropdown' %>
+            </div>
+        </div>
+    </div>
 
+    <div class="row center" style="margin-bottom:20px; margin-left:20px">
+
+
+        <div id="scatter_box" class="span3 viz_selection_box_off">
+            <h3> SCATTER </h3>
+        </div>
+        <div id="bar_box" class="span3 viz_selection_box_off">
+            <h3>BAR</h3>
+        </div>
+        <div id="pie_box" class="span3 viz_selection_box_off">
+            <h3>PIE</h3>
+        </div>
+    </div>
+
+    <div class="row center">
         <%= form_for(@viz) do |f| %>
-        	<%= render 'shared/error_messages', object: f.object %>
+            <%= f.submit "Generate Viz!", class: "btn btn-large btn-primary" %>
+        <% end %>
+    </div>
 
-            <%= render 'spreadsheet_form' %>
+</div>
 
-    </section>
-
-    <section class="center">
-            <%= f.submit "Save Dataset", class: "btn btn-large btn-primary" %>
-            <% end %>
-    </section>
-
+<div class="row">
+    <!-- chart_div comes from the draw_viz.js file, which draws the google visualization -->    
+    <div id="chart_div"></div>
 </div>
